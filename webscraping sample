@@ -1,0 +1,24 @@
+from selenium import webdriver
+
+# Initialize the WebDriver driver = webdriver.Chrome()
+
+# Go to Amazon's website driver.get("https://www.amazon.com/")
+
+# Type "laptop" in the search bar search_bar = driver.find_element_by_id("twot absearchtextbox") search_bar.send_keys("laptop") search_bar.submit()
+
+# Click on the first laptop link laptop_link = driver.find_element_by_css_sele ctor(".s-result-list .s-result-item:nth-child(1) h2 a")
+
+laptop_link.click()
+
+# Scrape the laptop's name, price, and model laptop_name =
+
+driver.find_element_by_id("productTitle").text laptop_price = driver.find_element_by_id("priceblock_ourprice").text laptop_model =
+
+driver.find_element_by_css_selector(".techD. attrG:nth-child(1) .attr-value").text
+# Print the results
+print("Laptop Name:", laptop_name)
+print("Laptop Price:", laptop_price)
+print("Laptop Model:", laptop_model)
+
+# Quit the WebDriver
+driver.quit()
